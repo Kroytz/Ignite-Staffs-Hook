@@ -9,9 +9,6 @@
 Handle g_hIgniteEntity = INVALID_HANDLE;
 Handle g_hExtinguishEntity = INVALID_HANDLE;
 
-GlobalForward g_hOnIgniteEntity;
-GlobalForward g_hOnExtinguishEntity;
-
 public Plugin myinfo =
 {
     name        = "Fire Staff Hook",
@@ -57,7 +54,6 @@ public void OnClientPostAdminCheck(int client)
 
 public MRESReturn Hook_Ignite(int entity, Handle hParams)
 {
-    // 不存在的玩家, 不管.
     if (!IsPlayerExist(entity))
         return MRES_Ignored;
 
@@ -69,7 +65,6 @@ public MRESReturn Hook_Ignite(int entity, Handle hParams)
 
 public MRESReturn Hook_Extinguish(int entity, Handle hParams)
 {
-    // 不存在的玩家, 不管.
     if (!IsPlayerExist(entity))
         return MRES_Ignored;
 
